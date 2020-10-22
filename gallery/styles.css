@@ -1,0 +1,42 @@
+
+/* gallery */
+
+.gallery {
+	}
+	
+.gallery_bot {
+	padding: 5px 5px 0px 5px;
+
+}
+
+.row {
+	padding: 0px 0px 0px 0px;
+	height: 284px;
+}
+
+.box_img2 {
+	width: 308px;
+	height: 274px;
+	background: url(images/box_img.gif) left top no-repeat;
+	padding: 10px 10px 0px 10px;
+	float:left;
+}
+
+
+
+.box_razd {
+	width: 10px;
+	height: 50px;
+	float: left;
+}
+
+
+
+.g_size
+{
+width: 308px;
+height: 162px;
+}
+
+
+
