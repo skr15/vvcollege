@@ -5,7 +5,7 @@
 		$un=$_SESSION['username'];
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from faculty_master where user_name=".$un."");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
 		$fname=$row['fac_name'];
@@ -185,7 +185,7 @@ Subject<br><br><br>
 <?php
 $con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-$res=mysqli_query($con,"select start_date,end_date,sub_id,course_id from sub_taken_master where fac_id='$fid'");
+$res=mysqli_query($con,"select start_date,end_date,sub_id,course_id from sub_taken_master where fac_id=".$fid."");
 $cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
@@ -213,7 +213,7 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$qry1="SELECT sub_name FROM sub_master where sub_id=".$subid."";
 						$res2=mysqli_query($con,$qry1);
 						while($row2=mysqli_fetch_array($res2))
 						{
@@ -239,7 +239,7 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$qry1="SELECT sub_name FROM sub_master where sub_id=".$subid."";
 						$res2=mysqli_query($con,$qry1);
 						while($row2=mysqli_fetch_array($res2))
 						{
@@ -257,7 +257,7 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$qry1="SELECT sub_name FROM sub_master where sub_id=".$subid."";
 						$res2=mysqli_query($con,$qry1);
 						while($row2=mysqli_fetch_array($res2))
 						{
