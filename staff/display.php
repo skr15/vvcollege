@@ -236,16 +236,16 @@
 <td>
 <br><select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;width:auto;">
 <?php
-$res=mysql_query("select * from sub_taken_master where fac_id=$fid and declard='Yes';");
-$cnt=mysql_num_rows($res);
+$res=mysqli_query($con,"select * from sub_taken_master where fac_id=$fid and declard='Yes';");
+$cnt=mysqli_num_rows($res);
 	while($cnt>0)
 	{
 		while($row=mysql_fetch_array($res))
 		{
 			$examid=$row['exam_id'];
 			$div=$row['division'];
-			$res1=mysql_query("SELECT * from exam_master where exam_id=$examid;");
-			while($row=mysql_fetch_array($res1))
+			$res1=mysqli_query("SELECT * from exam_master where exam_id=$examid;");
+			while($row=mysqli_fetch_array($res1))
 			{
    				$type=$row['examtype'];
 				$du=$row['duration'];
@@ -254,13 +254,13 @@ $cnt=mysql_num_rows($res);
 				$asday  = substr($du,8,2);
 				$eid=$row['exam_id'];
 				$qry="SELECT course_name FROM course_master where course_id in(select course_id from exam_master where exam_id=$eid);";
-				$res2=mysql_query($qry);
-				while($row=mysql_fetch_array($res2))
+				$res2=mysqli_query($con,$qry);
+				while($row=mysqli_fetch_array($res2))
 				{
 					$name=$row['course_name'];
 					$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id=$eid);";
-					$res3=mysql_query($qry);
-					while($row=mysql_fetch_array($res3))
+					$res3=mysqli_query($qry);
+					while($row=mysqli_fetch_array($res3))
 					{
 						
 
@@ -378,8 +378,8 @@ if(isset($_POST['l1']))
 		
 	}
 	$qry="SELECT sub_name,sub_id,total_marks FROM sub_master where sub_id in(SELECT sub_id FROM sub_taken_master where exam_id=$id and fac_id=$fid and division='$d');";
-	$res=mysql_query("$qry");
-	while($row=mysql_fetch_array($res))
+	$res=mysqli_query($con,"$qry");
+	while($row=mysqli_fetch_array($res))
 	{
 		
 		
@@ -498,19 +498,19 @@ margin-left:auto;
 		$subid=$row['sub_id'];
 		$m=$row['total_marks'];
 		$qry="SELECT * FROM result_master where exam_id=$id  and sub_id=$subid and division='$d';";
-		$res1=mysql_query("$qry");
+		$res1=mysqli_query($con,"$qry");
 		echo "<tbody>";
 		static $a,$p,$f;
-		while($row=mysql_fetch_array($res1))
+		while($row=mysqli_fetch_array($res1))
 		{
 			
-   	            	echo "<tr>";
+   	        echo "<tr>";
 			$id=$row['stud_id'];
 			echo "<td>".$id."</td>";
 			$a+=1;
 			$qry1="select fname,mname,lname from stud_master where stud_id=$id;";
-			$res=mysql_query($qry1) or die();
-			while($row2=mysql_fetch_array($res))
+			$res=mysqli_query($con,$qry1) or die();
+			while($row2=mysqli_fetch_array($res))
 			{
 				$fn=$row2['fname'];
 				$mn=$row2['mname'];
