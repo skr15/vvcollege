@@ -378,6 +378,7 @@ if(isset($_POST['l1']))
 		
 	}
 	$qry="SELECT sub_name,sub_id,total_marks FROM sub_master where sub_id in(SELECT sub_id FROM sub_taken_master where exam_id=".$id." and fac_id=".$fid." and division=".$d.")";
+	eco $qry; exit;
 	$res=mysqli_query($con,"$qry");
 	while($row=mysqli_fetch_array($res))
 	{
