@@ -3,10 +3,10 @@
 	if($_SESSION['username']!="")
 	{
 		$un=$_SESSION['username'];
-		$con=mysql_connect("localhost","root","");
-		mysql_select_db("vvkcollege",$con);
-		$res=mysql_query("select * from faculty_master where user_name='$un';");
-		$row=mysql_fetch_array($res);
+		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
 		$fname=$row['fac_name'];
 		$fid=$row['fac_id'];
@@ -183,10 +183,10 @@ Subject<br><br><br>
 <td>
 <select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">		
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("vvkcollege",$con);
-$res=mysql_query("select start_date,end_date,sub_id,course_id from sub_taken_master where fac_id=$fid;");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"select start_date,end_date,sub_id,course_id from sub_taken_master where fac_id='$fid'");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
 	while($row=mysql_fetch_array($res))
@@ -213,9 +213,9 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id=$subid;";
-						$res2=mysql_query($qry1);
-						while($row2=mysql_fetch_array($res2))
+						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$res2=mysqli_query($con,$qry1);
+						while($row2=mysqli_fetch_array($res2))
 						{
 						$sub=$row2['sub_name'];?>
 						<option value="<?php echo $sub."=".$cid?>">
@@ -239,12 +239,12 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id=$subid;";
-						$res2=mysql_query($qry1);
-						while($row2=mysql_fetch_array($res2))
+						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$res2=mysqli_query($con,$qry1);
+						while($row2=mysqli_fetch_array($res2))
 						{
 						$sub=$row2['sub_name'];?>
-						<option value="<?php echo $sub."=".$cid?>">
+						<option value='<?php echo $sub."=".$cid?>'>
 						<?php  echo $sub?>
 						</option><?php
 						}
@@ -257,12 +257,12 @@ while($cnt>0)
 					{
 						if($eday>=$tday)
 						{
-						$qry1="SELECT sub_name FROM sub_master where sub_id=$subid;";
-						$res2=mysql_query($qry1);
-						while($row2=mysql_fetch_array($res2))
+						$qry1="SELECT sub_name FROM sub_master where sub_id='$subid'";
+						$res2=mysqli_query($con,$qry1);
+						while($row2=mysqli_fetch_array($res2))
 						{
 						$sub=$row2['sub_name'];?>
-						<option value="<?php echo $sub."=".$cid?>">
+						<option value='<?php echo $sub."=".$cid?>'>
 						<?php  echo $sub?>
 						</option><?php
 						}
@@ -339,8 +339,8 @@ if($_FILES['file']['type']=="application/octet-stream")
 	$qry="insert into download_master(course_id,down_title,path,down_type) values($couid,'$exam','$mypath','assignment');";
 	mysql_query($qry);
 	$qry="select down_id from download_master ORDER by down_id desc;";
-	$res1=mysql_query($qry);
-	$row=mysql_fetch_array($res1);
+	$res1=mysqli_query($con,$qry);
+	$row=mysqli_fetch_array($res1);
 	$downid=$row['down_id'];
 	$newsname=$exam." Assignment is declared";
 	$y=date('Y');
@@ -353,7 +353,7 @@ if($_FILES['file']['type']=="application/octet-stream")
 	}
 	$edate=$y."-".$m."-".$d;
 	$qry="insert into news_master(news_name,start_date,end_date,dis,down_id) values('$newsname','$sdate','$edate','$newsname',$downid);";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	?>
 	<script language="javascript">
 	alert(" File  is successfullay upload to Server ");
