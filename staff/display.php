@@ -3,10 +3,11 @@
 	if($_SESSION['username']!="")
 	{
 		$un=$_SESSION['username'];
-		$con=mysql_connect("localhost","root","");
-		mysql_select_db("vvkcollege",$con);
-		$res=mysql_query("select * from faculty_master where user_name='$un';");
-		$row=mysql_fetch_array($res);
+		// $con=mysql_connect("localhost","root","");
+		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
 		$fname=$row['fac_name'];
 		$fid=$row['fac_id'];

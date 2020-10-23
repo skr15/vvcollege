@@ -312,7 +312,7 @@
 <center><h2 style="margin-left:12px;margin-top:;font-size:24px;">A message from your Director!</h2>
 </center>	
 <br>				
-<img src="css/images/5.jpg" alt="Post Image" width="135" height="159"/>
+<img src="admin/image/5.jpg" alt="Post Image" width="135" height="159"/>
 					
 <p style="color:#6E6E6E;font: 18px Arial, Helvetica, sans-serif;margin-left:12px;text-align:justify;">
 <?php
@@ -341,7 +341,7 @@ echo $row10['info'];
 <h2 style="margin-left:350px;margin-top:;width:500px;font-size:20px;"><center>A message from your I/C Principal (BCA)</center></h2>
 
 <br>				
-<img src="css/images/6.jpg" alt="Post Image" align="right" width="135" style="margin-left:10px;margin-right:10px;" height="159" />
+<img src="admin/images/dipjaya.jpg" alt="Post Image" align="right" width="135" style="margin-left:10px;margin-right:10px;" height="159" />
 					
 <p style="color:#6E6E6E;font: 18px vardna, Helvetica, sans-serif;margin-left:340px;margin-right:50px;text-align:justify;"><?php $res10 = mysqli_query($con, "select info from collegeinfo_master where info_type='principal msg';");
 $row10 = mysqli_fetch_array($res10);
