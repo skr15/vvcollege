@@ -264,7 +264,7 @@ $(function() {
 <td>
 <br><select name="att" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;width:auto;">	
 <?php
-$res=mysqli_query($con,"select * from sub_taken_master where fac_id=$fid;");
+$res=mysqli_query($con,"select * from sub_taken_master where fac_id='$fid'");
 $cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
@@ -282,7 +282,7 @@ while($cnt>0)
 		$eyear  = substr($edate,0,4);
 		$emonth = substr($edate,5,2);
 		$eday  = substr($edate,8,2);
-		$res1=mysqli_query($con,"SELECT * from attend_master where declard='Yes' and sem_id=$sid and course_id=$cid;");
+		$res1=mysqli_query($con,"SELECT * from attend_master where declard='Yes' and sem_id='$sid' and course_id='$cid'");
 		while($row1=mysqli_fetch_array($res1))
 		{
    			$asdate=$row1['start_date'];
@@ -303,11 +303,11 @@ while($cnt>0)
 						
 						
 						$id=$row1['att_id'];
-						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id=$id);";
+						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id=$id);";
+						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
@@ -448,11 +448,11 @@ while($cnt>0)
 					if($smonth<=$asmonth && $smonth<=$aemonth)
 					{
 						$id=$row1['att_id'];
-						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id=$id);";
+						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id=$id);";
+						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
@@ -588,11 +588,11 @@ while($cnt>0)
 					if($smonth>=$asmonth && $emonth>$aemonth)
 					{
 						$id=$row1['att_id'];
-						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id=$id);";
+						$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id=$id);";
+						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
@@ -769,7 +769,7 @@ if(isset($_POST['l1']))
 		}
 	}
 	$attid=substr("$str",0,$po);
-	$qry="SELECT sub_name FROM sub_master where sub_id=$n;";
+	$qry="SELECT sub_name FROM sub_master where sub_id='$n'";
 	$res=mysqli_query($con,"$qry");
 	while($row=mysqli_fetch_array($res))
 	{
@@ -886,11 +886,11 @@ margin-left:auto;
 <?php
 		
 		//$subid=$row['sub_id'];
-		$qry="SELECT * FROM attend_master where att_id=$attid;";
+		$qry="SELECT * FROM attend_master where att_id='$attid'";
 		$res=mysqli_query($con,"$qry");
 		$row=mysqli_fetch_array($res);
 		$m=$row['working_days'];
-		$qry="SELECT * FROM stud_attend_master where att_id=$attid  and sub_id=$n and division='$d';";
+		$qry="SELECT * FROM stud_attend_master where att_id='$attid'  and sub_id='$n' and division='$d'";
 		$res1=mysqli_query($con,"$qry");
 		echo "<tbody>";
 		while($row=mysqli_fetch_array($res1))
@@ -899,7 +899,7 @@ margin-left:auto;
    	            	echo "<tr>";
 			$id=$row['stud_id'];
 			echo "<td>".$id."</td>";
-			$qry1="select fname,mname,lname from stud_master where stud_id=$id;";
+			$qry1="select fname,mname,lname from stud_master where stud_id='$id";
 			$res=mysqli_query($con,$qry1) or die();
 			while($row2=mysqli_fetch_array($res))
 			{
