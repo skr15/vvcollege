@@ -54,10 +54,10 @@ $(document).pngFix( );
 			<td>
 			<select name="usertype"  style="margin-left:px;width:220px;height:35px;"  size="1" class="login-inp">
 		<?php 
-		$con=mysqli_connect("localhost","root","");
+		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		if($con)
 		{
-			mysqli_select_db($con,"vvkcollege");
+			mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 		}
 		else
 		{
@@ -146,10 +146,10 @@ echo "Message has been sent....!";
 		
 		$pass=$_POST['password'];
 		$type=$_POST['usertype'];
-		$con1=mysqli_connect("localhost","root","");
+		$con1=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		if($con)
 		{
-			mysqli_select_db($con1,"vvkcollege");
+			mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 		}
 		else
 		{
