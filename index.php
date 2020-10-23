@@ -316,10 +316,11 @@
 					
 <p style="color:#6E6E6E;font: 18px Arial, Helvetica, sans-serif;margin-left:12px;text-align:justify;">
 <?php
-$con = mysqli_connect("localhost", "root", "");
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+// $con = mysqli_connect("localhost", "root", "");
 if ($con)
 {
-    mysqli_select_db($con, "vvkcollege",);
+    mysqli_select_db($con, "heroku_d61df1c5316c5a5",);
 }
 else
 {
