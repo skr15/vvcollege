@@ -259,7 +259,7 @@ $cnt=mysqli_num_rows($res);
 				{
 					$name=$row['course_name'];
 					$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id='$eid');";
-					$res3=mysqli_query($qry);
+					$res3=mysqli_query($con,$qry);
 					while($row=mysqli_fetch_array($res3))
 					{
 						
