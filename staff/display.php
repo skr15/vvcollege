@@ -236,7 +236,7 @@
 <td>
 <br><select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;width:auto;">
 <?php
-$res=mysqli_query($con,"select * from sub_taken_master where fac_id='$fid' and declard='Yes'");
+$res=mysqli_query($con,"select * from sub_taken_master where fac_id=".$fid." and declard='Yes'");
 $cnt=mysqli_num_rows($res);
 	while($cnt>0)
 	{
@@ -244,7 +244,7 @@ $cnt=mysqli_num_rows($res);
 		{
 			$examid=$row['exam_id'];
 			$div=$row['division'];
-			$res1=mysqli_query("SELECT * from exam_master where exam_id='$examid'");
+			$res1=mysqli_query("SELECT * from exam_master where exam_id=".$examid."");
 			while($row=mysqli_fetch_array($res1))
 			{
    				$type=$row['examtype'];
