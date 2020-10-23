@@ -492,10 +492,12 @@ border-bottom: 1px  black solid;border-left: 1px  black solid;border-right: 1px 
 $day = date("d");
 $mon = date("m");
 $year = date("Y");
-$con = mysqli_connect("localhost", "root", "");
+// $con = mysqli_connect("localhost", "root", "");
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+
 if ($con)
 {
-    mysqli_select_db($con, "vvkcollege");
+    mysqli_select_db($con, "heroku_d61df1c5316c5a5");
 }
 else
 {
