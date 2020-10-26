@@ -293,8 +293,8 @@
                                                 <td>
 </form>
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 $res=mysql_query("SELECT att_id,start_date,end,course_id,sem_id from attend_master where declard='Yes' and course_id=4;");
 $cnt=mysql_num_rows($res);
 ?>

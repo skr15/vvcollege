@@ -254,10 +254,10 @@
 <link rel="stylesheet" type="text/css" href="my.css" />
 <?php
 $facid=$_GET['facid'];
-$conn = mysql_connect("localhost", "root", "");
-mysql_select_db("vvkcollege");
-$res=mysql_query("SELECT course_id,fac_name,qulifiaction,desigation,email_id,contact_no,exp,path,DOJ,fac_id from faculty_master where fac_id=$facid;");
-$row=mysql_fetch_array($res);
+$conn=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($conn,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($conn,"SELECT course_id,fac_name,qulifiaction,desigation,email_id,contact_no,exp,path,DOJ,fac_id from faculty_master where fac_id=$facid;");
+$row=mysqli_fetch_array($res);
 $name=$row['fac_name'];
 $cid=$row['course_id'];
 $des=$row['desigation'];
@@ -416,9 +416,9 @@ Success Rate(%)
 </th>
 </tr>
 <?php
-$res=mysql_query("SELECT sub_id,exam_id,start_date,end_date,division from sub_taken_master where fac_id=$facid and declard='Yes';");
-$cnt=mysql_num_rows($res);
-while($row=mysql_fetch_array($res))
+$res=mysqli_query("SELECT sub_id,exam_id,start_date,end_date,division from sub_taken_master where fac_id=$facid and declard='Yes';");
+$cnt=mysqli_num_rows($conn,$res);
+while($row=mysqli_fetch_array($res))
 {
 $subid=$row['sub_id'];
 $div=$row['division'];
@@ -545,14 +545,14 @@ $findate1=$findate;
 	$findate=$smonth."-".$emonth." ".$eyear;
 	}
 $qry="SELECT sub_name,total_marks FROM sub_master where sub_id=$subid;";
-$res1=mysql_query("$qry");
-$row1=mysql_fetch_array($res1);
+$res1=mysqli_query($conn,"$qry");
+$row1=mysqli_fetch_array($res1);
 $suname=$row1['sub_name'];
 $m=$row1['total_marks'];
 $qry="SELECT * FROM result_master where exam_id=$examid  and sub_id=$subid and division='$div';";
-$res1=mysql_query("$qry");
+$res1=mysqli_query($conn,"$qry");
 static $a,$p,$f;
-while($row=mysql_fetch_array($res1))
+while($row=mysqli_fetch_array($res1))
 {
 			
 			$a+=1;

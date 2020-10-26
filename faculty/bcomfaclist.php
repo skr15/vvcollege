@@ -266,10 +266,10 @@
 <h1  style="font-family: Verdana, Helvetica, sans-serif;font-size:25px;color:#3CB371;">B.Com Faculty</h1><br>
 				
 					<?php
-						$conn = mysql_connect("localhost", "root", "");
-						mysql_select_db("vvkcollege");
-						$res=mysql_query("SELECT * from faculty_master where course_id=3;");
-						while($row=mysql_fetch_array($res))
+						$conn=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($conn,"heroku_d61df1c5316c5a5");
+						$res=mysqli_query($conn,"SELECT * from faculty_master where course_id=3;");
+						while($row=mysqli_fetch_array($res))
 						{?>
 							<?php
 							$name=$row['fac_name'];

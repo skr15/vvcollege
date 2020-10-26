@@ -362,8 +362,8 @@
 					
 
 <?php									
-$conn = mysql_connect("localhost", "root", "");
-mysql_select_db("vvkcollege");
+$conn=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($conn,"heroku_d61df1c5316c5a5");
 $cn=1;
 $res=mysql_query("SELECT down_title,down_id from download_master where down_type='gallery';");
 while($row=mysql_fetch_array($res))
