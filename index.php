@@ -526,8 +526,8 @@ while ($row = mysqli_fetch_array($res))
                 $id = $row['down_id'];
                 if ($id > 0)
                 {
-                    $res1 = mysql_query("select * from download_master where down_id=$id;");
-                    $row1 = mysql_fetch_array($res1);
+                    $res1 = mysqli_query($con,"select * from download_master where down_id=$id;");
+                    $row1 = mysqli_fetch_array($res1);
                     $path = "../../../../../" . $row1['path'];
 ?><a href="<?php echo $path ?>"><?php
                     echo "<li style='margin-left:35px;'>" . "<strong style=';'>";
@@ -576,8 +576,8 @@ while ($row = mysqli_fetch_array($res))
                 $id = $row['down_id'];
                 if ($id > 0)
                 {
-                    $res1 = mysql_query("select * from download_master where down_id=$id;");
-                    $row1 = mysql_fetch_array($res1);
+                    $res1 = mysqli_query($con,"select * from download_master where down_id=$id;");
+                    $row1 = mysqli_fetch_array($res1);
                     $path = "../../../../../" . $row1['path'];
 ?><a href="<?php echo $path ?>"><?php
                     echo "<li style='margin-left:35px;'>" . "<strong style=';'>";
@@ -633,8 +633,8 @@ while ($row = mysqli_fetch_array($res))
             $id = $row['down_id'];
             if ($id > 0)
             {
-                $res1 = mysql_query("select * from download_master where down_id=$id;");
-                $row1 = mysql_fetch_array($res1);
+                $res1 = mysqli_query($con,"select * from download_master where down_id=$id;");
+                $row1 = mysqli_fetch_array($res1);
                 $path = "../../../../../" . $row1['path'];
 ?><a href="<?php echo $path ?>"><?php
                 echo "<li style='margin-left:35px;'>" . "<strong style=';'>";
