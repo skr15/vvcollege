@@ -10,7 +10,7 @@
 		$path=$row['path'];
 		$fname=$row['fac_name'];
 		$fid=$row['fac_id'];
-		
+		echo $un, $fname,$fid; exit;
 		
 ?>
 		
