@@ -218,13 +218,13 @@ Exam<br><br><br>
 <td>
 <select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">			
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
-$res=mysql_query("SELECT declard,examtype,duration,exam_id from exam_master where declard='No';");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"SELECT declard,examtype,duration,exam_id from exam_master where declard='No';");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
-	while($row=mysql_fetch_array($res))
+	while($row=mysqli_fetch_array($res))
 	{
    		$type=$row['examtype'];
 		$du=$row['duration'];
@@ -233,13 +233,13 @@ while($cnt>0)
 		$asday  = substr($du,8,2);
 		$eid=$row['exam_id'];
 		$qry="SELECT course_name FROM course_master where course_id in(select course_id from exam_master where exam_id=$eid);";
-		$res1=mysql_query($qry);
-		while($row=mysql_fetch_array($res1))
+		$res1=mysqli_query($con,$qry);
+		while($row=mysqli_fetch_array($res1))
 		{
 			$name=$row['course_name'];
 			$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id=$eid);";
-			$res2=mysql_query($qry);
-			while($row=mysql_fetch_array($res2))
+			$res2=mysqli_query($con,$qry);
+			while($row=mysqli_fetch_array($res2))
 			{
 				if($asmonth==1)
 						{
@@ -350,11 +350,11 @@ if(isset($_POST['l1']))
 	if($_FILES['file']['type']=="text/xml")
 	{
 	static $st=0;
-	$con=mysql_connect("localhost","root","");
+	$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 	$eid=$_POST['en'];
 	if($con)
 	{
-		mysql_select_db("vvkcollege",$con);
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 	}
 	else
 	{
@@ -363,13 +363,13 @@ if(isset($_POST['l1']))
 	if ($_FILES['file']['tmp_name'])
 	{
 		$qry1="select sub_id from sub_master where sem_id in(select sem_id from exam_master where exam_id=$eid);";
-		$res1=mysql_query($qry1);
+		$res1=mysqli_query($con,$qry1);
  		$dom = DOMDocument::load( $_FILES['file']['tmp_name'] );
  		$rows = $dom->getElementsByTagName( 'Row' );
- 		$cnt=mysql_num_rows($res1);
+ 		$cnt=mysqli_num_rows($res1);
 		if($cnt==1)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -381,7 +381,7 @@ if(isset($_POST['l1']))
 		}
 		if($cnt==2)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -397,7 +397,7 @@ if(isset($_POST['l1']))
 		}
 		if($cnt==3)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -417,7 +417,7 @@ if(isset($_POST['l1']))
 		}
 		if($cnt==4)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -441,7 +441,7 @@ if(isset($_POST['l1']))
 		}
 		if($cnt==5)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -470,7 +470,7 @@ if(isset($_POST['l1']))
 		
   		if($cnt==6)
 		{
- 		while($row=mysql_fetch_array($res1))
+ 		while($row=mysqli_fetch_array($res1))
  		{ 
 	 		if($cnt==1)
  			{
@@ -533,7 +533,7 @@ if(isset($_POST['l1']))
 				$index += 1;
     			}
 		
-		$cnt=mysql_num_rows($res1);
+		$cnt=mysqli_num_rows($res1);
 		if($cnt==4)
 		{
 		$cnt=1;
@@ -542,25 +542,25 @@ if(isset($_POST['l1']))
     			if($cnt==1)
    	 		{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-			if(mysql_query($qry) or die())
+			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==4)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -575,31 +575,31 @@ if(isset($_POST['l1']))
     			if($cnt==1)
    	 		{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==4)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==5)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s5,$marks5,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -614,37 +614,37 @@ if(isset($_POST['l1']))
     			if($cnt==1)
    	 		{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==4)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==5)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s5,$marks5,'$div');";
-   			if(mysql_query($qry) or die())
+   			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==6)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s6,$marks6,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -659,19 +659,19 @@ if(isset($_POST['l1']))
     			if($cnt==1)
    	 		{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into result_master(exam_id,stud_id,sub_id,marks,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -691,10 +691,10 @@ if($st>0)
 	</script>
 	<?php
 	$qry="update exam_master set declard='Yes' where exam_id=$eid;";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	$qry="select * from exam_master where exam_id=$eid;";
-	$res=mysql_query($qry);
-	$row=mysql_fetch_array($res);
+	$res=mysqli_query($con,$qry);
+	$row=mysqli_fetch_array($res);
 	$date=$row['duration'];
 	$semid=$row['sem_id'];
 	$cid=$row['course_id'];
@@ -702,8 +702,8 @@ if($st>0)
 	$month = substr($date,5,2);
 	$day  = substr($date,8,2);
 	$qry1="select * from sub_taken_master where course_id=$cid and sem_id=$semid;";
-	$res1=mysql_query($qry1);
-	while($row=mysql_fetch_array($res1))
+	$res1=mysqli_query($con,$qry1);
+	while($row=mysqli_fetch_array($res1))
 	{
 		$sdate=$row['start_date'];
 		$edate=$row['end_date'];
@@ -722,7 +722,7 @@ if($st>0)
 				{
 					
 					$qry="update sub_taken_master set declard='Yes',exam_id=$eid where fac_id=$fid and course_id=$cid and sem_id=$semid and start_date='$sdate' and end_date='$edate';";
-					mysql_query($qry);
+					mysqli_query($con,$qry);
 				}
 			}	
 		}
@@ -734,7 +734,7 @@ if($st>0)
 				{
 					
 					$qry="update sub_taken_master set declard='Yes',exam_id=$eid where fac_id=$fid and course_id=$cid and sem_id=$semid and start_date='$sdate' and end_date='$edate';";
-					mysql_query($qry);
+					mysqli_query($con,$qry);
 				}
 			}	
 		}

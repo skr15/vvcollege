@@ -218,13 +218,13 @@ Exam<br><br><br>
 <td>
 <select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">		
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
-$res=mysql_query("SELECT declard,examtype,duration,exam_id from exam_master where status_tt='No';");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"SELECT declard,examtype,duration,exam_id from exam_master where status_tt='No';");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
-	while($row=mysql_fetch_array($res))
+	while($row=mysqli_fetch_array($res))
 	{
    		$type=$row['examtype'];
 		$du=$row['duration'];
@@ -233,13 +233,13 @@ while($cnt>0)
 		$sday  = substr($du,8,2);
 		$eid=$row['exam_id'];
 		$qry="SELECT course_name FROM course_master where course_id in(select course_id from exam_master where exam_id=$eid);";
-		$res1=mysql_query($qry);
-		while($row=mysql_fetch_array($res1))
+		$res1=mysqli_query($con,$qry);
+		while($row=mysqli_fetch_array($res1))
 		{
 			$name=$row['course_name'];
 			$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id=$eid);";
-			$res2=mysql_query($qry);
-			while($row=mysql_fetch_array($res2))
+			$res2=mysqli_query($con,$qry);
+			while($row=mysqli_fetch_array($res2))
 			{
 				$semno=$row['sem_no'];
 				if($semno==0)
@@ -371,17 +371,17 @@ if($_FILES['file']['type']=="application/octet-stream")
 	$tmp=$_FILES['file']['tmp_name'];
 	move_uploaded_file($tmp,"../../www.vivekanandcollege.ac.in/upload/examtimetable/".$exam1);
 	$qry="update exam_master set status_tt='Yes' where exam_id=$eid;";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	$qry="select course_id from exam_master where exam_id=$eid;";
-	$res1=mysql_query($qry);
-	$row=mysql_fetch_array($res1);
+	$res1=mysqli_query($con,$qry);
+	$row=mysqli_fetch_array($res1);
 	$couid=$row['course_id'];
 	$mypath="www.vivekanandcollege.ac.in/upload/examtimetable/".$exam1;
 	$qry="insert into download_master(course_id,down_title,path,down_type) values($couid,'$exam1','$mypath','timetable');";
-	mysql_query($qry);
+	mysqli_query($qry);
 	$qry="select down_id from download_master ORDER by down_id desc;";
-	$res1=mysql_query($qry);
-	$row=mysql_fetch_array($res1);
+	$res1=mysqli_query($con,$qry);
+	$row=mysqli_fetch_array($res1);
 	$downid=$row['down_id'];
 	$str1=$nn;
 	$len=strlen($str1);
@@ -410,7 +410,7 @@ if($_FILES['file']['type']=="application/octet-stream")
 	}
 	$edate=$y."-".$m."-".$d;
 	$qry="insert into news_master(news_name,start_date,end_date,dis,down_id) values('$newsname','$sdate','$edate','$newsname',$downid);";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	?>
 	<script language="javascript">
 	alert(" File  is successfullay upload to Server ");
