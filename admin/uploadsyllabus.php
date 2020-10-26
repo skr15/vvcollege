@@ -217,21 +217,21 @@ Course<br><br><br>
 <td>
 <select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">			
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
-$res=mysql_query("SELECT course_id,sem_no,sem_id,year from sem_master;");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"SELECT course_id,sem_no,sem_id,year from sem_master;");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
-	while($row=mysql_fetch_array($res))
+	while($row=mysqli_fetch_array($res))
 	{
    		$cid=$row['course_id'];
 		$semno=$row['sem_no'];
 		$semid=$row['sem_id'];
 		$year1=$row['year'];
 		$qry="SELECT course_name FROM course_master where course_id=$cid;";
-		$res1=mysql_query($qry);
-		while($row=mysql_fetch_array($res1))
+		$res1=mysqli_query($con,$qry);
+		while($row=mysqli_fetch_array($res1))
 		{
 			$name=$row['course_name'];
 			if($semno==0)
@@ -315,7 +315,7 @@ if($_FILES['file']['type']=="application/octet-stream")
 	move_uploaded_file($tmp,"../../www.vivekanandcollege.ac.in/upload/syllabus/".$exam);
 	$mypath="www.vivekanandcollege.ac.in/upload/syllabus/".$exam;
 	$qry="insert into download_master(course_id,down_title,path,down_type) values($couid,'$exam','$mypath','syllabus');";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	?>
 	<script language="javascript">
 	alert(" File  is successfullay upload to Server ");
