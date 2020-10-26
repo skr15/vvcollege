@@ -240,12 +240,12 @@ $res=mysqli_query($con,"select * from sub_taken_master where fac_id=".$fid." and
 $cnt=mysqli_num_rows($res);
 	while($cnt>0)
 	{
-		while($row=mysql_fetch_array($res))
+		while($row=mysqli_fetch_array($res))
 		{
 			$examid=$row['exam_id'];
 			$div=$row['division'];
 			$res1=mysqli_query("SELECT * from exam_master where exam_id=".$examid."");
-			while($row=mysqli_fetch_array($res1))
+			while($row=mysqli_fetch_array($con,$res1))
 			{
    				$type=$row['examtype'];
 				$du=$row['duration'];

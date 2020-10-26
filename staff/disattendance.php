@@ -307,8 +307,8 @@ while($cnt>0)
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
-						$res2=mysqli_query($con,$qry1);
+						$qry2="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
+						$res2=mysqli_query($con,$qry2);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
 						if($semno==0)
@@ -452,8 +452,8 @@ while($cnt>0)
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
-						$res2=mysqli_query($con,$qry1);
+						$qry2="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
+						$res2=mysqli_query($con,$qry2);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
 						if($semno==0)
@@ -592,8 +592,8 @@ while($cnt>0)
 						$res2=mysqli_query($con,$qry1);
 						$row2=mysqli_fetch_array($res2);
 						$name=$row2['course_name'];
-						$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
-						$res2=mysqli_query($con,$qry1);
+						$qry2="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id='$id');";
+						$res2=mysqli_query($con,$qry2);
 						$row2=mysqli_fetch_array($res2);
 						$semno=$row2['sem_no'];
 						if($semno==0)
