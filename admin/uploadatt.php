@@ -337,7 +337,7 @@ while($cnt>0)
 				$emon='DEC';
 			}
 			
-			while($row=mysql_fetch_array($res2))
+			while($row=mysqli_fetch_array($res2))
 			{
 				$semno=$row['sem_no'];
 				if($semno==0)
@@ -749,7 +749,7 @@ if($st>0)
 	</script>
 	<?php
 	$qry="update attend_master set declard='Yes' where att_id=$eid;";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 		
 	
 }
