@@ -256,8 +256,8 @@
 <br>
 <?php
 $id=$_GET['downid'];
-$conn = mysql_connect("localhost", "root", "");
-mysql_select_db("vvkcollege");
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 $res=mysql_query("SELECT path,down_title from download_master where down_id=$id;");
 $row=mysql_fetch_array($res);
 $path=$row['path'];

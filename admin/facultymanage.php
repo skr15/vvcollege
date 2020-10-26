@@ -7,8 +7,8 @@
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 		mysqli_query($con,"SET NAMES 'utf8'");
 		include("inc/jqgrid_dist.php");
-		$res=mysql_query("select path from faculty_master;");
-		$cnt=mysql_num_rows($res);
+		$res=mysqli_query($con,"select path from faculty_master;");
+		$cnt=mysqli_num_rows($res);
 		//$row=mysql_fetch_array($res);
 		$col = array();
 		$col["title"] = "Id"; // caption of column

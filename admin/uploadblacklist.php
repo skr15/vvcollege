@@ -214,13 +214,13 @@ Course<br><br><br>
 <td>
 <select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">			
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
-$res=mysql_query("select * from attend_master where declard='Yes';");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"select * from attend_master where declard='Yes';");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
-	while($row=mysql_fetch_array($res))
+	while($row=mysqli_fetch_array($res))
 	{
 		$sdate=$row['start_date'];
 		$edate=$row['end'];
@@ -234,12 +234,12 @@ while($cnt>0)
 		$emonth = substr($edate,5,2);
 		$eday  = substr($edate,8,2);
 		$qry1="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where course_id=$cid);";
-		$res2=mysql_query($qry1);
-		$row2=mysql_fetch_array($res2);
+		$res2=mysqli_query($con,$qry1);
+		$row2=mysqli_fetch_array($res2);
 		$name=$row2['course_name'];
 		$qry1="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where sem_id=$sid);";
-		$res2=mysql_query($qry1);
-		$row2=mysql_fetch_array($res2);
+		$res2=mysqli_query($con,$qry1);
+		$row2=mysqli_fetch_array($res2);
 		$semno=$row2['sem_no'];
 		if($semno==0)
 		{
@@ -409,10 +409,10 @@ if($_FILES['file']['type']=="application/octet-stream")
 	move_uploaded_file($tmp,"../../www.vivekanandcollege.ac.in/upload/blacklist/".$newname);
 	$mypath="www.vivekanandcollege.ac.in/upload/blacklist/".$newname;
 	$qry="insert into download_master(course_id,down_title,path,down_type) values('1','$exam','$mypath','balcklist');";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	$qry="select down_id from download_master ORDER by down_id desc;";
-	$res1=mysql_query($qry);
-	$row=mysql_fetch_array($res1);
+	$res1=mysqli_query($con,$qry);
+	$row=mysqli_fetch_array($res1);
 	$downid=$row['down_id'];
 	$newsname=$newname."Blacklist is declared";
 	$y=date('Y');
@@ -494,7 +494,7 @@ if($_FILES['file']['type']=="application/octet-stream")
 	}
 	$edate=$y."-".$m."-".$d;
 	$qry="insert into news_master(news_name,start_date,end_date,dis,down_id) values('$newsname','$sdate','$edate','$newsname',$downid);";
-	mysql_query($qry);
+	mysqli_query($con,$qry);
 	?>
 	<script language="javascript">
 	alert(" File  is successfullay upload to Server ");
