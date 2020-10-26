@@ -3,7 +3,6 @@
 	if($_SESSION['username']!="")
 	{
 		$un=$_SESSION['username'];
-		// $con=mysql_connect("localhost","root","");
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
@@ -236,7 +235,7 @@
 <td>
 <br><select name="en" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;width:auto;">
 <?php
-$res=mysqli_query($con,"select * from sub_taken_master where fac_id=".$fid." and declard='Yes'");
+$res=mysqli_query($con,"select * from sub_taken_master where fac_id='$fid' and declard='Yes'");
 $cnt=mysqli_num_rows($res);
 	while($cnt>0)
 	{
@@ -244,7 +243,7 @@ $cnt=mysqli_num_rows($res);
 		{
 			$examid=$row['exam_id'];
 			$div=$row['division'];
-			$res1=mysqli_query("SELECT * from exam_master where exam_id=".$examid."");
+			$res1=mysqli_query("SELECT * from exam_master where exam_id='$examid'");
 			while($row=mysqli_fetch_array($con,$res1))
 			{
    				$type=$row['examtype'];
@@ -253,12 +252,12 @@ $cnt=mysqli_num_rows($res);
 				$asmonth = substr($du,5,2);
 				$asday  = substr($du,8,2);
 				$eid=$row['exam_id'];
-				$qry="SELECT course_name FROM course_master where course_id in(select course_id from exam_master where exam_id=".$eid.")";
+				$qry="SELECT course_name FROM course_master where course_id in(select course_id from exam_master where exam_id='$eid')";
 				$res2=mysqli_query($con,$qry);
 				while($row=mysqli_fetch_array($res2))
 				{
 					$name=$row['course_name'];
-					$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id=".$eid.")";
+					$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from exam_master where exam_id='$eid')";
 					$res3=mysqli_query($con,$qry);
 					while($row=mysqli_fetch_array($res3))
 					{
@@ -377,7 +376,7 @@ if(isset($_POST['l1']))
 		}
 		
 	}
-	$qry="SELECT sub_name,sub_id,total_marks FROM sub_master where sub_id in(SELECT sub_id FROM sub_taken_master where exam_id=".$id." and fac_id=".$fid." and division=".$d.")";
+	$qry="SELECT sub_name,sub_id,total_marks FROM sub_master where sub_id in(SELECT sub_id FROM sub_taken_master where exam_id='$id' and fac_id='$fid' and division='$d')";
 	$res=mysqli_query($con,"$qry");
 	while($row=mysqli_fetch_array($res))
 	{
