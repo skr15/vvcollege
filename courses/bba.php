@@ -377,10 +377,10 @@
 				<tbody>
 					<tr>
 						<?php
-						$conn = mysql_connect("localhost", "root", "");
-						mysql_select_db("SRMcollege");
-						$res=mysql_query("SELECT * from course_master where course_id=2;");
-						$row=mysql_fetch_array($res);
+						$conn=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+						mysqli_select_db($conn,"heroku_d61df1c5316c5a5");
+						$res=mysqli_query($conn,"SELECT * from course_master where course_id=2;");
+						$row=mysqli_fetch_array($res);
 						$name=$row['course_name'];
 						$sem=$row['no_of_sem'];
 						$cyear=$row['no_of_year'];
@@ -414,8 +414,8 @@
 <h1  style="font: bold 1.3em 'trebuchet MS', 'Lucida Sans', Arial;">Sem No / Year:
 <select name="se"  size="1" style="width:40px;">
 <?php
-$res=mysql_query("SELECT * from sem_master where course_id=2;");
-$cnt=mysql_num_rows($res);
+$res=mysqli_query($conn,"SELECT * from sem_master where course_id=2;");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
 	while($row=mysql_fetch_array($res))
@@ -487,8 +487,8 @@ Marks
 <tbody>
 <?php			
 $id=$_POST['se'];
-$res=mysql_query("SELECT * from sub_master where sem_id=$id;");
-while($row=mysql_fetch_array($res))
+$res=mysqli_query($conn,"SELECT * from sub_master where sem_id=$id;");
+while($row=mysqli_fetch_array($res))
 {
 ?>
 <tr>

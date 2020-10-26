@@ -255,10 +255,10 @@
 <br>
 <ul type="circle" style="color:#6E6E6E;font: 18px Arial, Helvetica, sans-serif;margin-left:25px;text-align:justify;">	
 <?php									
-$conn = mysql_connect("localhost", "root", "");
-mysql_select_db("vvkcollege");
-$res=mysql_query("SELECT * from download_master where course_id=4 and down_type='assignment';");
-while($row=mysql_fetch_array($res))
+$conn=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+		mysqli_select_db($conn,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($conn,"SELECT * from download_master where course_id=4 and down_type='assignment';");
+while($row=mysqli_fetch_array($res))
 {
 ?>
 <center>

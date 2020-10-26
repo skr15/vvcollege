@@ -307,9 +307,9 @@ if(isset($_POST['l1']))
 	}
 	else
 	{
-	$con=mysql_connect("localhost","root","");
-	mysql_select_db("SRMcollege",$con);
-	mysql_query("update login_master set password='$new' where user_name='$username1';");
+	$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+	mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+	mysqli_query($con,"update login_master set password='$new' where user_name='$username1';");
 	?>
 	<script language="javascript">
 	alert('Your password is Successfully changed');

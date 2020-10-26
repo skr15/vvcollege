@@ -216,24 +216,24 @@ Attendance<br><br><br>
 <td>
 <select name="at" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;">			
 <?php
-$con=mysql_connect("localhost","root","");
-mysql_select_db("SRMcollege",$con);
-$res=mysql_query("SELECT * from attend_master where declard='No';");
-$cnt=mysql_num_rows($res);
+$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+$res=mysqli_query($con,"SELECT * from attend_master where declard='No';");
+$cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
-	while($row=mysql_fetch_array($res))
+	while($row=mysqli_fetch_array($res))
 	{
    		$sdate=$row['start_date'];
 		$edate=$row['end'];
 		$aid=$row['att_id'];
 		$qry="SELECT course_name FROM course_master where course_id in(select course_id from attend_master where att_id=$aid);";
-		$res1=mysql_query($qry);
-		while($row=mysql_fetch_array($res1))
+		$res1=mysqli_query($con,$qry);
+		while($row=mysqli_fetch_array($res1))
 		{
 			$name=$row['course_name'];
 			$qry="SELECT sem_no,year FROM sem_master where sem_id in(select sem_id from attend_master where att_id=$aid);";
-			$res2=mysql_query($qry);
+			$res2=mysqli_query($con,$qry);
 			$syear=substr($sdate,0,4);
 			$smon=substr($sdate,5,2);
 			$sday=substr($sdate,8,2);
@@ -410,11 +410,11 @@ if(isset($_POST['l1']))
 if($_FILES['file']['type']=="text/xml")
 	{
 	static $st=0;
-	$con=mysql_connect("localhost","root","");
+	$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 	$eid=$_POST['at'];
 	if($con)
 	{
-		mysql_select_db("vvkcollege",$con);
+		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 	}
 	else
 	{
@@ -423,13 +423,13 @@ if($_FILES['file']['type']=="text/xml")
 	if ($_FILES['file']['tmp_name'])
 	{
 		$qry1="select sub_id from sub_master where sem_id in(select sem_id from attend_master where att_id=$eid);";
-		$res1=mysql_query($qry1);
+		$res1=mysqli_query($con,$qry1);
  		$dom = DOMDocument::load( $_FILES['file']['tmp_name'] );
  		$rows = $dom->getElementsByTagName( 'Row' );
- 		$cnt=mysql_num_rows($res1);
+ 		$cnt=mysqli_num_rows($res1);
 		if($cnt==1)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -441,7 +441,7 @@ if($_FILES['file']['type']=="text/xml")
 		}
 		if($cnt==2)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -457,7 +457,7 @@ if($_FILES['file']['type']=="text/xml")
 		}
 		if($cnt==3)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -477,7 +477,7 @@ if($_FILES['file']['type']=="text/xml")
 		}
 		if($cnt==4)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -501,7 +501,7 @@ if($_FILES['file']['type']=="text/xml")
 		}
 		if($cnt==5)
 		{
-			while($row=mysql_fetch_array($res1))
+			while($row=mysqli_fetch_array($res1))
  			{ 
 	 		if($cnt==1)
  			{
@@ -530,7 +530,7 @@ if($_FILES['file']['type']=="text/xml")
 		
   		if($cnt==6)
 		{
- 		while($row=mysql_fetch_array($res1))
+ 		while($row=mysqli_fetch_array($res1))
  		{ 
 	 		if($cnt==1)
  			{
@@ -591,7 +591,7 @@ if($_FILES['file']['type']=="text/xml")
 				$index += 1;
     			}
 		
-		$cnt=mysql_num_rows($res1);
+		$cnt=mysqli_num_rows($res1);
 		if($cnt==4)
 		{
 		$cnt=1;
@@ -600,25 +600,25 @@ if($_FILES['file']['type']=="text/xml")
     			if($cnt==1)
    	 		{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-			if(mysql_query($qry) or die())
+			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==4)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -633,31 +633,31 @@ if($_FILES['file']['type']=="text/xml")
     			if($cnt==1)
    	 		{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==4)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
 			if($cnt==5)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s5,$marks5,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -672,37 +672,37 @@ if($_FILES['file']['type']=="text/xml")
     			if($cnt==1)
    	 		{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==4)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s4,$marks4,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==5)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s5,$marks5,'$div');";
-   			if(mysql_query($qry) or die())
+   			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==6)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s6,$marks6,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
@@ -717,19 +717,19 @@ if($_FILES['file']['type']=="text/xml")
     			if($cnt==1)
    	 		{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s1,$marks1,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==2)
     			{
     			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s2,$marks2,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
     			if($cnt==3)
     			{
    			$qry="insert into stud_attend_master(att_id,stud_id,sub_id,tot_present,division) values($eid,$stud_id,$s3,$marks3,'$div');";
-    			if(mysql_query($qry) or die())
+    			if(mysqli_query($con,$qry) or die())
 			$st+=1;
     			}
    			$cnt++;
