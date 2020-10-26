@@ -1,5 +1,15 @@
 ﻿
 <?php          
+	// $con = mysqli_connect("localhost", "root", "");
+
+	// if($con)
+	// 	{
+	// 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+	// 	}
+	// 	else
+	// 	{
+	// 		echo "Connection is not Est"."<br>";
+	// 	}
 	if (!function_exists('json_encode'))   
 	{   
 	require_once 'JSON.php';   
@@ -75,7 +85,7 @@
 					var $RF222733EC095D089B5A1E3AD401E79CD;        
 					var $R000B935637CEA64CC7810FB0077F5FF1;        
 					var $R0B4F1A0E1C92849500842E2BD49E8357;         
-			function jqgrid($R000B935637CEA64CC7810FB0077F5FF1 = null)   
+			function jqgrid1($R000B935637CEA64CC7810FB0077F5FF1 = null)   
 			{    
 				if (!is_array($_SESSION))
 					session_start();      
@@ -204,14 +214,16 @@
 					}         
 				$this->select_command = preg_replace("/(\r|\n)/"," ",$this->select_command);    
 				$this->select_command = preg_replace("/[ ]+/"," ",$this->select_command);           
-				$R130D64A4AD653C91E0FD80DE8FEADC3A = $this->select_command . " LIMIT 0";           
-				$R679E9B9234E2062F809DBD3325D37FB6 = mysql_query($R130D64A4AD653C91E0FD80DE8FEADC3A) 
+				$R130D64A4AD653C91E0FD80DE8FEADC3A = $this->select_command . " LIMIT 0";  
+				$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
+				mysqli_select_db($con,"heroku_d61df1c5316c5a5");
+				$R679E9B9234E2062F809DBD3325D37FB6 = mysqli_query($con,$R130D64A4AD653C91E0FD80DE8FEADC3A) 
 					or 
 				die("Couldn't execute query. ".mysql_error());    
-				$R610E039357299CF494E6DCBE9A8A7C54 = mysql_num_fields($R679E9B9234E2062F809DBD3325D37FB6);    
+				$R610E039357299CF494E6DCBE9A8A7C54 = mysqli_num_fields($R679E9B9234E2062F809DBD3325D37FB6);    
 					for ($RA16D2280393CE6A2A5428A4A8D09E354=0; $RA16D2280393CE6A2A5428A4A8D09E354 < $R610E039357299CF494E6DCBE9A8A7C54; $RA16D2280393CE6A2A5428A4A8D09E354++)    
 						{      
-							$R6B6E98CDE8B33087A33E4D3A497BD86B[] = mysql_field_name($R679E9B9234E2062F809DBD3325D37FB6, 
+							$R6B6E98CDE8B33087A33E4D3A497BD86B[] = mysqli_fetch_field_direct($R679E9B9234E2062F809DBD3325D37FB6, 
 							$RA16D2280393CE6A2A5428A4A8D09E354);    
 						}         
 					if (!$R246159316604D58DB8DE9F848709E772)    
