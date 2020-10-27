@@ -55,7 +55,7 @@
 		
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../admin/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
+		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../student/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
 		<td>
 		</tr>
 		</table>
