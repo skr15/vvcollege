@@ -3,14 +3,13 @@
 	if($_SESSION['username']!="")
 	{
 		$un=$_SESSION['username'];
-		// $con=mysql_connect("localhost","root","");
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from stud_master where user_name='$un';");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
-		$fname=$row['fac_name'];
-		$fid=$row['fac_id'];
+		$fname=$row['fname'];
+		$stud_id=$row['stud_id'];
 		
 		
 ?>
@@ -122,8 +121,6 @@ $(function() {
 			<div class="account-drop-inner">
 
 						<a href="cnpassword.php" id="acc-settings">Change Password</a> 
-						<div class="clear">&nbsp;</div>
-						<a href="uploadassignment.php" id="acc-details">Upload Assignment</a>
 						<div class="clear">&nbsp;</div>
 			</div>
 			</div>
@@ -264,7 +261,7 @@ $(function() {
 <td>
 <br><select name="att" size="1" style="font-family: Verdana, Helvetica, sans-serif;font-size:17px;margin-left:-150px;width:auto;">	
 <?php
-$res=mysqli_query($con,"select * from sub_taken_master where fac_id='$fid'");
+$res=mysqli_query($con,"select * from sub_taken_master where stud_id='$stud_id'");
 $cnt=mysqli_num_rows($res);
 while($cnt>0)
 {
@@ -282,7 +279,7 @@ while($cnt>0)
 		$eyear  = substr($edate,0,4);
 		$emonth = substr($edate,5,2);
 		$eday  = substr($edate,8,2);
-		$res1=mysqli_query($con,"SELECT * from attend_master where declard='Yes' and sem_id='$sid' and course_id='$cid'");
+		$res1=mysqli_query($con,"SELECT * from stud_attend_master where stud_id='$sid' and sub_id='$subid'");
 		while($row1=mysqli_fetch_array($res1))
 		{
    			$asdate=$row1['start_date'];
@@ -930,7 +927,7 @@ margin-left:auto;
 }
 else
 {
-		header("location:../admin/login.php");
+		header("location:../student/login.php");
 }
 ?>
 </div>

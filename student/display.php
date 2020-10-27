@@ -5,11 +5,11 @@
 		$un=$_SESSION['username'];
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from stud_master where user_name='$un';");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
-		$fname=$row['fac_name'];
-		$fid=$row['fac_id'];
+		$fname=$row['fname'];
+		$stud_id=$row['stud_id'];
 		// echo $un, $fname,$fid; exit;
 		
 ?>
@@ -90,8 +90,6 @@
 			<div class="account-drop-inner">
 						<a href="cnpassword.php" id="acc-settings">Change Password</a>  
 						<div class="clear">&nbsp;</div>
-						<a href="uploadassignment.php" id="acc-details">Upload Assignment</a>
-			<div class="clear">&nbsp;</div>
 			</div>
 			</div>
 			<!--  end account-content -->
@@ -237,7 +235,7 @@
 <?php
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-$res=mysqli_query($con,"select * from sub_taken_master where fac_id='$fid' and declard='Yes'");
+$res=mysqli_query($con,"select * from sub_taken_master where declard='Yes'");
 $cnt=mysqli_num_rows($res);
 	while($cnt>0)
 	{
@@ -487,15 +485,7 @@ margin-left:auto;
 						<td>Division</td>
 					</tr>
 				</thead>
-
-
-
-
-
-
-		
 <?php
-		
 		$subid=$row['sub_id'];
 		$m=$row['total_marks'];
 		$qry="SELECT * FROM result_master where exam_id='$id' and sub_id='$subid' and division='$d'";
@@ -577,7 +567,7 @@ margin-left:auto;
 }
 else
 {
-		header("location:../admin/login.php");
+		header("location:../student/login.php");
 }
 ?>
 </div>

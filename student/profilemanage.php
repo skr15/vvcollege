@@ -6,11 +6,11 @@
 		// $con=mysql_connect("localhost","root","");
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from stud_master where user_name='$un';");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
-		$fname=$row['fac_name'];
-		$fid=$row['fac_id'];
+		$fname=$row['fname'];
+		$stud_id=$row['stud_id'];
 		error_reporting(E_ALL & ~E_NOTICE);
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
 		mysqli_query($con,"SET NAMES 'utf8'");
@@ -18,7 +18,7 @@
 		
 		$col = array();
 		$col["title"] = "Id"; // caption of column
-		$col["name"] = "fac_id"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
+		$col["name"] = "stud_id"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
 		$col["width"] = "13";
 		# $col["hidden"] = true; // hide column by default
 		$col["search"] = true;
@@ -40,8 +40,8 @@
 
 
 		$col = array();
-		$col["title"] = "FAC Name"; // caption of column
-		$col["name"] = "fac_name"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
+		$col["title"] = "First Name"; // caption of column
+		$col["name"] = "fname"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
 		$col["width"] = "35";
 		# $col["hidden"] = true; // hide column by default
 		$col["editable"] = true; // this column is editable
@@ -49,34 +49,6 @@
 		$col["editoptions"] = array("size"=>20);
 		$col["search"] = true;
 		$cols[] = $col;	
-
-
-		$col = array();
-		$col["title"] = "Qulifi"; // caption of column
-		$col["name"] = "qulifiaction"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
-		$col["width"] = "20";
-		# $col["hidden"] = true; // hide column by default
-		$col["editable"] = true;
-		 // this column is editable
-		$col["search"] = false;
-		$col["editrules"] = array("string"=>true,"limit"=>true,"required"=>true);
-		$col["editoptions"] = array("size"=>20);
-		$cols[] = $col;	
-
-		
-		$col = array();
-		$col["title"] = "Desig";
-		// fieldname is not with tablealias in sql, so we used plain fieldname
-		$col["name"] = "desigation"; 
-		$col["width"] = "20";
-		$col["search"] = false;
-		$col["editable"] = true; // this column is editable
-		$col["edittype"] = "select"; // render as select
-		$col["editoptions"] = array("value"=>'Director:Director;Priniciple:Priniciple;Leacture:Leacture');
-		// with default display of textbox with size 20
-		 // and is required
-		// $col["formatoptions"] = array("srcformat"=>'Y-m-d',"newformat"=>'d/m/Y'); // format as date, wont work for editing
-		$cols[] = $col;
 	
 		
 		$col = array();
@@ -123,16 +95,6 @@
 		$cols[] = $col;
 		
 		$col = array();
-		$col["title"] = "Salary";
-		// fieldname is not with tablealias in sql, so we used plain fieldname
-		$col["name"] = "salary"; 
-		$col["width"] = "22";
-		$col["search"] = false;
-		$col["editable"] = true; // this column is editable
-		$col["editrules"] = array("required"=>true,"integer"=>true,"zero"=>true,"salary"=>true); // and is required
-		$cols[] = $col;
-		
-		$col = array();
 		$col["title"] = "Gender";
 		// fieldname is not with tablealias in sql, so we used plain fieldname
 		$col["name"] = "gender"; 
@@ -168,26 +130,13 @@
 		$col["editable"] = true; // this column is editable
 		$cols[] = $col;
 
-		$col = array();
-		$col["title"] = "experi";
-		// fieldname is not with tablealias in sql, so we used plain fieldname
-		$col["name"] = "exp"; 
-		$col["width"] = "18";
-		$col["search"] = false;
-		$col["editable"] = true; // this column is editable
-		$col["editrules"] = array("required"=>true,"integer"=>true,"emax"=>true); // and is required
-		$cols[] = $col;
-
-		
-	
-
 		$g = new jqgrid();
 
 		// $grid["url"] = ""; // your paramterized URL -- defaults to REQUEST_URI
 		$grid["rowNum"] = 10; // by default 20
-		$grid["sortname"] = 'fac_id'; // by default sort grid by this field
+		$grid["sortname"] = 'stud_id'; // by default sort grid by this field
 		$grid["sortorder"] = "asc"; // ASC or DESC
-		$grid["caption"] = "Faculty  Data"; // caption of grid
+		$grid["caption"] = "Student  Data"; // caption of grid
 		$grid["autowidth"] = true; // expand grid to screen width
 		$grid["multiselect"] = true; // allow you to multi-select through checkboxes
 		$grid["export"] = array("filename"=>"my-file", "sheetname"=>"test");
@@ -214,7 +163,7 @@ $g->select_command = "SELECT f.user_name,f.password,f.fac_id,IF(f.course_id='1',
 
 
 // this db table will be used for add,edit,delete
-$g->table = "faculty_master";
+$g->table = "stud_master";
 
 // pass the cooked columns to grid
 $g->set_columns($cols);
@@ -308,8 +257,6 @@ $i = rand(0,8);
 			<div class="account-content">
 			<div class="account-drop-inner">
 				<a href="cnpassword.php" id="acc-settings">Change Password</a>  
-			<div class="clear">&nbsp;</div>
-				<a href="uploadassignment.php" id="acc-details">Upload Assignment</a>
 			<div class="clear">&nbsp;</div>
 			</div>
 			</div>
@@ -448,7 +395,7 @@ $i = rand(0,8);
 	}	
 	else
 	{
-		header("location:../admin/login.php");
+		header("location:../student/login.php");
 	}
 
 ?>

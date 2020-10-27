@@ -86,8 +86,6 @@
 			
 			<a href="cnpassword.php" id="acc-settings">Change Password</a>
 			<div class="clear">&nbsp;</div>
-			<a href="uploadassignment.php" id="acc-details">Upload Assignment</a>
-			<div class="clear">&nbsp;</div>
 			</div>
 			</div>
 			<!--  end account-content -->
@@ -207,7 +205,7 @@
 <h1 style="font-size: 30px;margin-top:-30px;"><i>Welcome <?php echo $fname?><br></font></h1></i></td>
 </tr>
 <tr>
-<td align="center"><img src="<?php echo "../admin/"."$path" ?>" style="margin-left:10px;margin-top:15px;" width="410" height="350"></td>
+<td align="center"><img src="<?php echo "../student/"."$path" ?>" style="margin-left:10px;margin-top:15px;" width="410" height="350"></td>
 </tr>
 </table>
 </center>		
@@ -233,6 +231,6 @@
 	}	
 	else
 	{
-		header("location:../admin/login.php");
+		header("location:../student/login.php");
 	}
 ?>

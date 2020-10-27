@@ -187,6 +187,13 @@ echo "Message has been sent....!";
 						$u=$_REQUEST['username'];
 						header("location:../staff/welcome.php?username=$u");
 					}
+					if($type=="student")
+					{
+						session_start();
+						$_SESSION['username']=$un;
+						$u=$_REQUEST['username'];
+						header("location:../student/welcome.php?username=$u");
+					}
 					
 				}
 				else

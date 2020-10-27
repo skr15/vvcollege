@@ -3,14 +3,13 @@
 	if($_SESSION['username']!="")
 	{
 		$un=$_SESSION['username'];
-		// $con=mysql_connect("localhost","root","");
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from stud_master where user_name='$un';");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
-		$fname=$row['fac_name'];
-		$fid=$row['fac_id'];
+		$fname=$row['fname'];
+		$stud_id=$row['stud_id'];
 		
 		
 ?>
@@ -97,8 +96,6 @@ $(function() {
 			<div class="account-drop-inner">
 
 						<a href="cnpassword.php" id="acc-settings">Change Password</a> 
-						<div class="clear">&nbsp;</div>
-						<a href="uploadassignment.php" id="acc-details">Upload Assignment</a>
 						<div class="clear">&nbsp;</div>
 			</div>
 			</div>
@@ -209,9 +206,9 @@ if($_FILES['file']['type']=="image/jpeg" || $_FILES['file']['type']=="image/gif"
 	
 	$tmp=$_FILES['file']['tmp_name'];
 	$name=$_FILES['file']['name'];
-	move_uploaded_file($tmp,"../../www.vivekanandcollege.ac.in/admin/image/".$name);
+	move_uploaded_file($tmp,"../../www.vivekanandcollege.ac.in/student/image/".$name);
 	$mypath="../admin/image/".$name;
-	$qry="update faculty_master set path='$mypath' where fac_id=$fid;";
+	$qry="update stud_master set path='$mypath' where stud_id=$stud_id;";
 	mysql_query($qry);
 	?>
 	<script language="javascript">
@@ -232,7 +229,7 @@ else
 else
 {
 	
-		header("location:../admin/login.php");
+		header("location:../student/login.php");
 	
 }
 ?>

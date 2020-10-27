@@ -6,11 +6,11 @@
 	{
 		$con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		mysqli_select_db($con,"heroku_d61df1c5316c5a5");
-		$res=mysqli_query($con,"select * from faculty_master where user_name='$un';");
+		$res=mysqli_query($con,"select * from stud_master where user_name='$un';");
 		$row=mysqli_fetch_array($res);
 		$path=$row['path'];
-		$fname=$row['fac_name'];
-		$facid=$row['fac_id'];
+		$fname=$row['fname'];
+		$stud_id=$row['stud_id'];
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,7 +51,7 @@
 		
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../admin/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
+		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../student/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
 		<td>
 		</tr>
 		</table>
