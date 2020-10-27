@@ -63,7 +63,7 @@
 			
 <!-- Begin Shell -->
 			
-<div class="">
+<div class="shell">
 		
 <ul>
 					
