@@ -63,8 +63,8 @@
 			
 <!-- Begin Shell -->
 			
-<div class="shell">
-				
+<div class="">
+		
 <ul>
 					
 <li class="active"><a href="index.php" title="home">Home</a></li>

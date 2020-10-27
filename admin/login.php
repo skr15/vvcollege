@@ -52,7 +52,7 @@ $(document).pngFix( );
 		<tr>
 			<th>Usertype</th>
 			<td>
-			<select name="usertype"  style="margin-left:px;width:220px;height:35px;"  size="1" class="login-inp">
+			<select name="usertype"  style="margin-left:px;color:#000000;width:220px;height:35px;"  size="1" class="login-inp">
 		<?php 
 		   $con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
 		   //$con = mysqli_connect("localhost", "root", "");
