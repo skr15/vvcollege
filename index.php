@@ -81,7 +81,7 @@
 </li>	
 
 <li><a href="" title="Kids">Course</a>
-	<div class="dd2">					
+	<div class="dd">					
 		<ul>
 		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
 		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							

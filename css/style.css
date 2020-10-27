@@ -101,21 +101,12 @@ h1#logo a { width: 214px; height: 69px; background: url('images/logo.png') no-re
 
 #navigation li .dd { display: none; position: absolute; top: 37px; left: 0; width: 176px; background: #323232; padding-top: 12px; padding-bottom: 8px; }
 #navigation li .dd li a { float: left; display: inline; padding-left: 35px; background: #323232 url('images/item.png') no-repeat 20px 9px; font-size: 12px; line-height: 24px; word-spacing: 2px; padding-right: 6px; width: 135px; }
-#navigation li .dd li a:hover,
-#navigation li .dd li.pr-active a,
-#navigation li .dd li .dd li a:hover { background: #5d5d5d url('images/item.png') no-repeat 20px 9px; }
+/*#navigation li .dd li a:hover,*/
+/*#navigation li .dd li.pr-active a,*/
+/*#navigation li .dd li .dd li a:hover { background: #5d5d5d url('images/item.png') no-repeat 20px 9px; }*/
 #navigation li .dd .dd { left: 176px; top: -8px; padding: 8px 0; }
 #navigation li .dd .dd li a { padding-left: 34px; width: 136px; }
-#navigation li .dd li.pr-active .dd a { background: #323232 url('images/item.png') no-repeat 20px 9px; }
-
-#navigation li .dd2 { display: none; position: absolute; top: 37px; left: 0; width: 176px; background: #323232; padding-top: 12px; padding-bottom: 8px; }
-#navigation li .dd2 li a { float: left; display: inline; padding-left: 35px; background: #323232 url('images/item.png') no-repeat 20px 9px; font-size: 12px; line-height: 24px; word-spacing: 2px; padding-right: 6px; width: 135px; }
-#navigation li .dd2 li a:hover,
-#navigation li .dd2 li.pr-active a,
-#navigation li .dd2 li .dd2 li a:hover { background: #5d5d5d url('images/item.png') no-repeat 20px 9px; }
-#navigation li .dd2 .dd2 { left: 176px; top: -8px; padding: 8px 0; }
-#navigation li .dd2 .dd2 li a { padding-left: 34px; width: 136px; }
-#navigation li .dd2 li.pr-active .dd a { background: #323232 url('images/item.png') no-repeat 20px 9px; }
+/*#navigation li .dd li.pr-active .dd a { background: #323232 url('images/item.png') no-repeat 20px 9px; }*/
 
 /* Slider */
 #slider { background-color: #c9bda7; 
