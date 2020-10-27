@@ -81,8 +81,8 @@
 </li>	
 
 <li><a href="" title="Kids">Course</a>
-	<div class="dd">					
-		<ul>
+	<div>					
+		<ul class="dd">
 		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
 		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							
 		<li><a href="courses/bcom.php" title="Drop down menu 3">BCOM</a></li>
@@ -93,8 +93,8 @@
 </li>	
 
 <li><a href="" title="Kids">Faculty</a>
-	<div class="dd">					
-		<ul>
+	<div>					
+		<ul class="dd">
 		<li><a href="faculty/bcafaclist.php" title="Drop down menu 1">BCA</a></li>				
 		<li><a href="faculty/bbafaclist.php">BBA</a></li>
 		<li><a href="faculty/bcomfaclist.php" title="Drop down menu 3">BCOM</a></li>
