@@ -108,6 +108,10 @@ h1#logo a { width: 214px; height: 69px; background: url('images/logo.png') no-re
 #navigation li .dd .dd li a { padding-left: 34px; width: 136px; }
 #navigation li .dd li.pr-active .dd a { background: #323232 url('images/item.png') no-repeat 20px 9px; }
 
+ul li a {
+  display: block;
+}
+
 /* Slider */
 #slider { background-color: #c9bda7; 
 background-image: url(images/templatemo_body.jpg); padding: 6px 0; border-bottom: 1px solid #4c4c4c; margin-bottom: 62px; width: 100%;position: relative; z-index: 10; }
