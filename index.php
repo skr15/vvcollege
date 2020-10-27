@@ -69,18 +69,6 @@
 					
 <li class="active"><a href="index.php" title="home">Home</a></li>
 
-<li><a href="" title="Kids">Course</a>
-	<div class="dd">					
-		<ul>
-		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
-		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							
-		<li><a href="courses/bcom.php" title="Drop down menu 3">BCOM</a></li>
-		<li><a href="courses/bed.php" title="Drop down menu 3">BED</a></li>
-		<li><a href="courses/ptc.php" title="Drop down menu 3">PTC</a></li>			
-		</ul>
-	</div>
-</li>	
-
 <li><a href="" title="Kids">About Us</a>
 	<div class="dd">			
 		<ul>
@@ -92,7 +80,17 @@
 	</div>
 </li>	
 
-
+<li><a href="" title="Kids">Course</a>
+	<div class="dd2">					
+		<ul>
+		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
+		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							
+		<li><a href="courses/bcom.php" title="Drop down menu 3">BCOM</a></li>
+		<li><a href="courses/bed.php" title="Drop down menu 3">BED</a></li>
+		<li><a href="courses/ptc.php" title="Drop down menu 3">PTC</a></li>			
+		</ul>
+	</div>
+</li>	
 
 <li><a href="" title="Kids">Faculty</a>
 	<div class="dd">					
