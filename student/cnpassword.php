@@ -284,7 +284,7 @@ if(isset($_POST['l1']))
 }	}
 	else
 	{
-		header("location:login.php");
+		header("location:../admin/login.php");
 	}
 
 ?>

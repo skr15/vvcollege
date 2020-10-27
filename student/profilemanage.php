@@ -392,7 +392,7 @@ $i = rand(0,8);
 	}	
 	else
 	{
-		header("location:../student/login.php");
+		header("location:../admin/login.php");
 	}
 
 ?>

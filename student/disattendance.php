@@ -927,7 +927,7 @@ margin-left:auto;
 }
 else
 {
-		header("location:../student/login.php");
+		header("location:../admin/login.php");
 }
 ?>
 </div>
