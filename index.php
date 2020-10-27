@@ -88,7 +88,7 @@
 </li>	
 
 <li><a href="#" title="Sports">Course</a>
-	<div class="dd">
+	<div class="">
 								
 	<ul>
 	<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>
@@ -109,7 +109,7 @@
 </li>	
 
 <li><a href="" title="Kids">Faculty</a>
-	<div class="dd">
+	<div class="">
 								
 	<ul>
 	<li><a href="faculty/bcafaclist.php" title="Drop down menu 1">BCA</a></li>
@@ -132,7 +132,7 @@
 
 <li><a href="" title="Kids">Attendance</a>
 
-<div class="dd">				
+<div class="">				
 	<ul>
 	<li><a href="attendance/showattendancebca.php" title="Drop down menu 1">BCA</a></li>									
 	<li><a href="attendance/showattendancebba.php" title="Drop down menu 1">BBA</a></li>
@@ -150,14 +150,14 @@
 					
 <li><a href="#" title="Football">Download</a>
 						
-<div class="dd">
+<div class="">
 							
 <ul>
 								
 <li>
 <a href="#" title="Drop down menu 3">Exam Time Table</a>
 									
-<div class="dd">
+<div class="">
 										
 <ul>
 											
@@ -174,12 +174,12 @@
 </ul>
 									
 </div>
-								</li>
+</li>
 								
 <li>
 <a href="#" title="Drop down menu 3">Syllabus</a>
 									
-<div class="dd">
+<div class="">
 										
 <ul>
 											
@@ -196,12 +196,12 @@
 </ul>
 									
 </div>
-								</li>
+</li>
 								
 <li>
 <a href="#" title="Drop down menu 3">Assignment</a>
 									
-<div class="dd">
+<div class="">
 										
 <ul>
 											
@@ -317,7 +317,6 @@
 <p style="color:#6E6E6E;font: 18px Arial, Helvetica, sans-serif;margin-left:12px;text-align:justify;">
 <?php
 $con=mysqli_connect("eu-cdbr-west-03.cleardb.net","bef02abf1996f3","01233466");
-// $con = mysqli_connect("localhost", "root", "");
 if ($con)
 {
     mysqli_select_db($con, "heroku_d61df1c5316c5a5",);
