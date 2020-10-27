@@ -69,61 +69,41 @@
 					
 <li class="active"><a href="index.php" title="home">Home</a></li>
 
-<li><a href="" title="Kids">About Us</a>
-
-<div class="dd">			
-	<ul>
-	<li><a href="about/mission.html" title="Drop down menu 1">Mission</a></li>
-									
-	<li><a href="about/college.php" title="Drop down menu 2">College</a></li>
-									
-	<li>
-	<a href="about/management.html" title="Drop down menu 3">Management</a>
-	</li>
-	<li>
-	<!-- <a href="about/creator.html" title="Drop down menu 3">Developers</a> -->
-	</li>	
-	</ul>
-</div>
-</li>	
-
-<li><a href="" title="Sports">Course</a>
+<li><a href="" title="Kids">Course</a>
 	<div class="dd">					
-	<ul>
-	<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>
-									
-	<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>
-									
-	<li>
-	<a href="courses/bcom.php" title="Drop down menu 3">BCOM</a>
-	</li>
-	<li>
-	<a href="courses/bed.php" title="Drop down menu 3">BED</a>
-	</li>
-	<li>
-	<a href="courses/ptc.php" title="Drop down menu 3">PTC</a>
-	</li>			
-	</ul>
+		<ul>
+		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
+		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							
+		<li><a href="courses/bcom.php" title="Drop down menu 3">BCOM</a></li>
+		<li><a href="courses/bed.php" title="Drop down menu 3">BED</a></li>
+		<li><a href="courses/ptc.php" title="Drop down menu 3">PTC</a></li>			
+		</ul>
 	</div>
 </li>	
 
+<li><a href="" title="Kids">About Us</a>
+	<div class="dd">			
+		<ul>
+		<li><a href="about/mission.html" title="Drop down menu 1">Mission</a></li>							
+		<li><a href="about/college.php" title="Drop down menu 2">College</a></li>							
+		<li><a href="about/management.html" title="Drop down menu 3">Management</a></li>
+		<li><!-- <a href="about/creator.html" title="Drop down menu 3">Developers</a> --></li>	
+		</ul>
+	</div>
+</li>	
+
+
+
 <li><a href="" title="Kids">Faculty</a>
-	<div class="dd">
-								
-	<ul>
-	<li><a href="faculty/bcafaclist.php" title="Drop down menu 1">BCA</a></li>
-									
-	<li><a href="faculty/bbafaclist.php">BBA</a></li>
-									
-	<li>
-	<a href="faculty/bcomfaclist.php" title="Drop down menu 3">BCOM</a>
-	</li>
-	<li><a href="faculty/bedfaclist.php" title="Drop down menu 2">BED</a></li>
-									
-	<li>
-	<a href="faculty/ptcfaclist.php" title="Drop down menu 3">PTC</a>
-	</li>		
-	</ul>
+	<div class="dd">					
+		<ul>
+		<li><a href="faculty/bcafaclist.php" title="Drop down menu 1">BCA</a></li>				
+		<li><a href="faculty/bbafaclist.php">BBA</a></li>
+		<li><a href="faculty/bcomfaclist.php" title="Drop down menu 3">BCOM</a></li>
+		<li><a href="faculty/bedfaclist.php" title="Drop down menu 2">BED</a></li>
+		<li><a href="faculty/ptcfaclist.php" title="Drop down menu 3">PTC</a>
+		</li>		
+		</ul>
 	</div>
 </li>	
 					
@@ -173,7 +153,7 @@
 </ul>
 									
 </div>
-								</li>
+</li>
 								
 <li>
 <a href="#" title="Drop down menu 3">Syllabus</a>
@@ -195,7 +175,7 @@
 </ul>
 									
 </div>
-								</li>
+</li>
 								
 <li>
 <a href="#" title="Drop down menu 3">Assignment</a>
@@ -224,10 +204,7 @@
 					
 </li>
 					
-<li><a href="gallery/clggallery.php" title="">Photo Gallery</a>
-</li>			
-		
-			
+<li><a href="gallery/clggallery.php" title="">Photo Gallery</a></li>			
 			
 </ul>
 				
