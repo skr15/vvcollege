@@ -136,7 +136,7 @@
 		$grid["rowNum"] = 10; // by default 20
 		$grid["sortname"] = 'stud_id'; // by default sort grid by this field
 		$grid["sortorder"] = "asc"; // ASC or DESC
-		$grid["caption"] = "Student  Data"; // caption of grid
+		$grid["caption"] = "Student Data"; // caption of grid
 		$grid["autowidth"] = true; // expand grid to screen width
 		$grid["multiselect"] = true; // allow you to multi-select through checkboxes
 		$grid["export"] = array("filename"=>"my-file", "sheetname"=>"test");
@@ -157,10 +157,7 @@ $g->set_actions(array(
 				);
 
 // you can provide custom SQL query to display data
-$g->select_command = "SELECT f.user_name,f.password,f.stud_id,IF(f.course_id='1','BCA',IF(f.course_id='2','BBA',IF(f.course_id='3','B.COM',IF(f.course_id='4','PTC','B.ED')))) as course_id,f.fname,f.email_id,f.path,f.mobile_no,f.DOB,f.add1,f.add2,f.exp,IF(f.gender='1','Male','Female') as gender FROM stud_master f where stud_id=$stud_id";
-
-
-
+$g->select_command = "SELECT f.user_name,f.password,f.stud_id,f.fname,f.email_id,f.path,f.mobile_no,f.DOB,f.add1,f.add2,IF(f.gender='1','Male','Female') as gender FROM stud_master f where stud_id=$stud_id";
 
 // this db table will be used for add,edit,delete
 $g->table = "stud_master";
@@ -223,7 +220,7 @@ $i = rand(0,8);
 		
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../admin/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
+		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;margin-right:5px;">&nbsp;<?php echo $fname;?></b><img src=" <?php echo "../student/"."$path" ?>" style="margin-top:-80px;" height="75" width="75"></td>
 		<td>
 		</tr>
 		</table>
