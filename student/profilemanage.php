@@ -18,7 +18,7 @@
 		
 		$col = array();
 		$col["title"] = "Id"; // caption of column
-		$col["name"] = "stud_id"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
+		$col["name"] = "Student ID"; // grid column name, must be exactly same as returned column-name from sql (tablefield or field-alias) 
 		$col["width"] = "13";
 		# $col["hidden"] = true; // hide column by default
 		$col["search"] = true;
@@ -45,7 +45,7 @@
 		$col["width"] = "35";
 		# $col["hidden"] = true; // hide column by default
 		$col["editable"] = true; // this column is editable
-		$col["editrules"] = array("required"=>true,"facname"=>true);
+		$col["editrules"] = array("required"=>true,"fname"=>true);
 		$col["editoptions"] = array("size"=>20);
 		$col["search"] = true;
 		$cols[] = $col;	
@@ -75,8 +75,8 @@
 	
 
 		$col = array();
-		$col["title"] = "Cona No";
-		$col["name"] = "contact_no";
+		$col["title"] = "Mobile No";
+		$col["name"] = "mobile_no";
 		$col["width"] = "27";
 		$col["editable"] = true;
 		$col["editrules"] = array("mno"=>true,"required"=>true);
@@ -157,7 +157,7 @@ $g->set_actions(array(
 				);
 
 // you can provide custom SQL query to display data
-$g->select_command = "SELECT f.user_name,f.password,f.fac_id,IF(f.course_id='1','BCA',IF(f.course_id='2','BBA',IF(f.course_id='3','B.COM',IF(f.course_id='4','PTC','B.ED')))) as course_id,f.fac_name,f.qulifiaction,f.desigation,f.email_id,f.path,f.contact_no,f.DOB,f.salary,f.add1,f.add2,f.exp,IF(f.gender='1','Male','Female') as gender FROM faculty_master f where fac_id=$fid";
+$g->select_command = "SELECT f.user_name,f.password,f.stud_id,IF(f.course_id='1','BCA',IF(f.course_id='2','BBA',IF(f.course_id='3','B.COM',IF(f.course_id='4','PTC','B.ED')))) as course_id,f.fname,f.email_id,f.path,f.mobile_no,f.DOB,f.add1,f.add2,f.exp,IF(f.gender='1','Male','Female') as gender FROM stud_master f where stud_id=$stud_id";
 
 
 

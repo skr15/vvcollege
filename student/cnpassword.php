@@ -17,7 +17,7 @@
 <head>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Display Result</title>
+<title>Change Password</title>
 <link rel="stylesheet" href="../admin/css/screen.css" type="text/css" media="screen" title="default" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="../admin/css/pro_dropline_ie.css" />
