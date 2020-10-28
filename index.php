@@ -85,8 +85,9 @@
 		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
 		<li><a href="courses/bba.php" title="Drop down menu 2">BBA</a></li>							
 		<li><a href="courses/bcom.php" title="Drop down menu 3">BCOM</a></li>
-		<li><a href="courses/bed.php" title="Drop down menu 3">BED</a></li>
-		<li><a href="courses/ptc.php" title="Drop down menu 3">PTC</a></li>			
+		<li><a href="courses/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+		<li><a href="courses/mba.php" title="Drop down menu 3">MBA</a></li>
+		<li><a href="courses/mba.php" title="Drop down menu 3">MCA</a></li>			
 		</ul>
 	</div>
 </li>	
