@@ -291,7 +291,7 @@ $i = rand(0,8);
 		
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;">&nbsp;Adminstrator </b><img src="image/admin1.png" style="margin-top:-50px;" height="60" width="70"></td>
+		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;">&nbsp;Adminstrator </b><img src="image/Admin1.png" style="margin-top:-50px;" height="60" width="70"></td>
 		<td>
 		</td>
 		</tr>
