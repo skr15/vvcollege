@@ -669,7 +669,7 @@ while ($row = mysqli_fetch_array($res))
     width: 274px;
     height: 40px;
     padding-top: 14px;margin-left:-65px;">Contact Information</h6>
-<div style="margin-top:-15px;margin-left:-61px;height:18em;width:265px;-moz-border-radius: 1em 4em 1em 4em;
+<div style="margin-top:-5px;margin-left:-61px;height:18em;width:265px;-moz-border-radius: 1em 4em 1em 4em;
 border-radius: 0em 0em 2em 2em;
 border-bottom: 1px  black solid;border-left: 1px  black solid;border-right: 1px  black solid;color:#454545;text-align:left">
                 <div style="height:15px"></div>
