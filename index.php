@@ -79,7 +79,7 @@
 	</div>
 </li>	
 
-<li><a class="page-scroll" href="acervo.html" onClick="window.location='acervo.html'">Acervo</a>
+<li><!-- <a class="page-scroll" href="acervo.html" onClick="window.location='acervo.html'">Acervo</a> -->
 	<a href="" title="Kids">Course</a>
 	<div class="dd">					
 		<ul>
