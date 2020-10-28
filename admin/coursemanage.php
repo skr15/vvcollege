@@ -129,7 +129,7 @@ $i = rand(0,8);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Course Mangage</title>
+<title>Course Manage</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
@@ -173,7 +173,7 @@ $i = rand(0,8);
 		
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;">&nbsp;Adminstrator </b><img src="image/admin1.png" style="margin-top:-50px;" height="60" width="70"></td>
+		<td><b><font style="font-family: Arial, Helvetica, sans-serif;" color="#F8F8FF">Hello  <b style="color:#FFDEAD;">&nbsp;Adminstrator </b><img src="image/Admin1.png" style="margin-top:-50px;" height="60" width="70"></td>
 		<td>
 		</td>
 		</tr>

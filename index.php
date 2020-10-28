@@ -41,7 +41,7 @@
 <img src="css/images/logo1.png" width="" height="140" style="margin-bottom:105px;margin-left:-95px;margin-top:30px;">
 <H6 style="margin-top:-250px;margin-left:50px;font-size:15px;color:#ffffff;display: block;">Managed By Srm University,Kattankulathur</h6>
 <H6 style="margin-top:-18px;margin-left:600px;font-size:15px;color:#ffffff;" >Deemed University</h6>
-<H6 style="margin-top:-18px;margin-left:900px;font-size:15px;color:#ffffff;" ><a href="admin/login.php" title="Drop down menu 3">Login</a></h6>
+<H6 style="margin-top:-18px;margin-left:900px;font-size:15px;color:#000000;" ><a href="admin/login.php" title="Drop down menu 3">Login</a></h6>
 <H6 style="margin-top:40px;margin-left:75px;font-size:32px;color:#ffffff;font-weight:bold" >SRM COLLEGE FOR BCA,BBA,B.COM,B.Ed,PTC </h6>
 <br>
 <H6 style="margin-top:px;margin-left:px;font-size:14px;color:#ffffff;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Reg. No.E/4682/SURAT)</h6>			
@@ -754,7 +754,7 @@ echo $hits[0];
 	</div>
 	
     <div class="cleaner"></div>
-<div id="footercopy"  style="margin-bottom:-50px;">
+<div id="footercopy"  style="margin-bottom:-50px;color:#ffffff;">
 	<p>Copyright &copy; 2012 Vivekanad college. All rights reserved.</p>
 
 </div>
