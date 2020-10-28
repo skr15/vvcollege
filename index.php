@@ -26,7 +26,7 @@
 <script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body>
+<body style="margin-bottom:80px;background-color: #ffffff;">
 	
 <!-- Begin Wrapper -->
 	<div id="wrapper">
