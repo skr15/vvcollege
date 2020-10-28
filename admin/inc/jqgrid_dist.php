@@ -641,7 +641,7 @@
 											}             
 											$this->options["pager"] = '#'.$R4BC8E01FD735B288AE2C70A47401309E."_pager";    
 											$this->options["jsonReader"] = array("repeatitems" => false, "id" => "0");         
-												if ($this->actions["edit"] === false || $this->actions["delete"] === false || $this->options["cellEdit"] === true)     
+												if ($this->actions["edit"] === false || $this->actions["delete"] === false || $this->options["cellEdit"] === false)     
 													$this->actions["rowactions"] = false;         
 												if ($this->actions["rowactions"] !== false)    
 												{         
@@ -678,7 +678,7 @@
 															}        
 														}";                
 													}                
-														if ($this->actions["edit"] !== false && $this->options["cellEdit"] !== true)    
+														if ($this->actions["edit"] !== false && $this->options["cellEdit"] !== false)    
 														{     
 															$R4A18FB3F34307C291A1914D7471481C9 .= ",'ondblClickRow':function(id)        
 															{         
