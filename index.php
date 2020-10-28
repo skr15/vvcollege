@@ -35,8 +35,7 @@
 		
 <div id="header">
 			
-<body style="margin-bottom:80px;background-color: #c9bda7; 
-	background-image: url(css/images/templatemo_body.jpg);">			
+<body style="margin-bottom:80px;background-color: #3399ff;">			
 <div class="shell" style="margin-bottom:45px;">
 			
 <img src="css/images/logo1.png" width="" height="140" style="margin-bottom:105px;margin-left:-95px;margin-top:30px;">
