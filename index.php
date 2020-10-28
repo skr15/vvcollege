@@ -35,7 +35,7 @@
 		
 <div id="header">
 			
-<body style="margin-bottom:80px;background-color: #3399ff;">			
+<body style="margin-bottom:80px;background-color: #006699;">			
 <div class="shell" style="margin-bottom:45px;">
 			
 <img src="css/images/logo1.png" width="" height="140" style="margin-bottom:105px;margin-left:-95px;margin-top:30px;">
@@ -79,7 +79,8 @@
 	</div>
 </li>	
 
-<li><a href="" title="Kids">Course</a>
+<li><a class="page-scroll" href="acervo.html" onClick="window.location='acervo.html'">Acervo</a>
+	<a href="" title="Kids">Course</a>
 	<div class="dd">					
 		<ul>
 		<li><a href="courses/bca.php" title="Drop down menu 1">BCA</a></li>							
