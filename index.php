@@ -39,12 +39,12 @@
 <div class="shell" style="margin-bottom:45px;">
 			
 <img src="css/images/logo1.png" width="" height="140" style="margin-bottom:105px;margin-left:-95px;margin-top:30px;">
-<H6 style="margin-top:-250px;margin-left:50px;font-size:15px;color:#666666;display: block;">Managed By Srm University,Kattankulathur</h6>
-<H6 style="margin-top:-18px;margin-left:600px;font-size:15px;color:#666666;" >Deemed University</h6>
-<H6 style="margin-top:-18px;margin-left:900px;font-size:15px;color:#666666;" ><a href="admin/login.php" title="Drop down menu 3">Login</a></h6>
-<H6 style="margin-top:40px;margin-left:75px;font-size:32px;color:#666666;font-weight:bold" >SRM COLLEGE FOR BCA,BBA,B.COM,B.Ed,PTC </h6>
+<H6 style="margin-top:-250px;margin-left:50px;font-size:15px;color:#ffffff;display: block;">Managed By Srm University,Kattankulathur</h6>
+<H6 style="margin-top:-18px;margin-left:600px;font-size:15px;color:#ffffff;" >Deemed University</h6>
+<H6 style="margin-top:-18px;margin-left:900px;font-size:15px;color:#ffffff;" ><a href="admin/login.php" title="Drop down menu 3">Login</a></h6>
+<H6 style="margin-top:40px;margin-left:75px;font-size:32px;color:#ffffff;font-weight:bold" >SRM COLLEGE FOR BCA,BBA,B.COM,B.Ed,PTC </h6>
 <br>
-<H6 style="margin-top:px;margin-left:px;font-size:14px;color:#666666;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Reg. No.E/4682/SURAT)</h6>			
+<H6 style="margin-top:px;margin-left:px;font-size:14px;color:#ffffff;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Reg. No.E/4682/SURAT)</h6>			
 </body>			
 <div class="cl">&nbsp;</div>
 				
@@ -657,9 +657,7 @@ while ($row = mysqli_fetch_array($res))
 </ul>
 </marquee>	
 </div>	
-<div style="margin-top:-237px;margin-left:630px;width: 253px;
-	float: left;
-	margin-left: ;">	
+<div style="margin-top:100px;margin-left:60px;">
 <h6 style="font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: normal;
@@ -668,7 +666,7 @@ while ($row = mysqli_fetch_array($res))
     text-align: center;
     width: 274px;
     height: 40px;
-    padding-top: 14px;margin-left:-65px;">Contact Information</h6>
+    padding-top: 14px;margin-left:-37px;">Contact Information</h6>
 <div style="margin-top:-5px;margin-left:-61px;height:18em;width:265px;-moz-border-radius: 1em 4em 1em 4em;
 border-radius: 0em 0em 2em 2em;
 border-bottom: 1px  black solid;border-left: 1px  black solid;border-right: 1px  black solid;color:#454545;text-align:left">
