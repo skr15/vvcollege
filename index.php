@@ -62,7 +62,7 @@
 			
 <!-- Begin Shell -->
 			
-<div class="">
+<div class="shell">
 		
 <ul>
 					
@@ -99,8 +99,9 @@
 		<li><a href="faculty/bcafaclist.php" title="Drop down menu 1">BCA</a></li>				
 		<li><a href="faculty/bbafaclist.php">BBA</a></li>
 		<li><a href="faculty/bcomfaclist.php" title="Drop down menu 3">BCOM</a></li>
-		<li><a href="faculty/bedfaclist.php" title="Drop down menu 2">BED</a></li>
-		<li><a href="faculty/ptcfaclist.php" title="Drop down menu 3">PTC</a>
+		<li><a href="faculty/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+		<li><a href="faculty/mba.php" title="Drop down menu 3">MBA</a></li>
+		<li><a href="faculty/mba.php" title="Drop down menu 3">MCA</a></li>
 		</li>		
 		</ul>
 	</div>
@@ -115,10 +116,9 @@
 	<li><a href="attendance/showattendancebca.php" title="Drop down menu 1">BCA</a></li>									
 	<li><a href="attendance/showattendancebba.php" title="Drop down menu 1">BBA</a></li>
 							
-	<li><a href="attendance/showattendancebcom.php" title="Drop down menu 1">BCOM</a></li>
-
-	<li><a href="attendance/showattendancebed.php" title="Drop down menu 1">BED</a></li>								
-	<li><a href="attendance/showattendanceptc.php" title="Drop down menu 1">PTC</a></li>
+	<li><a href="attendance/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+	<li><a href="attendance/mba.php" title="Drop down menu 3">MBA</a></li>
+	<li><a href="attendance/mba.php" title="Drop down menu 3">MCA</a></li>
 	</ul>
 </div>
 </li>		
@@ -143,11 +143,9 @@
 											
 <li><a href="download/examtimetable/bbaexamtimetable.php" title="Drop down menu 2">BBA</a></li>
 											
-<li><a href="download/examtimetable/bcomexamtimetable.php" title="Drop down menu 3">BCOM</a></li>
-											
-<li><a href="download/examtimetable/bedexamtimetable.php" title="Drop down menu 4">BED</a></li>
-
-<li><a href="download/examtimetable/ptcexamtimetable.php" title="Drop down menu 4">PTC</a></li>
+<li><a href="download/examtimetable/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+<li><a href="download/examtimetable/mba.php" title="Drop down menu 3">MBA</a></li>
+<li><a href="download/examtimetable/mba.php" title="Drop down menu 3">MCA</a></li>
 											
 </ul>
 									
@@ -161,15 +159,11 @@
 										
 <ul>
 											
-<li><a href="download/syllabus/bcasyllabus.php" title="Dr">BCA</a></li>
-											
-<li><a href="download/syllabus/bbasyllabus.php"  title="Drop down menu 2">BBA</a></li>
-											
-<li><a href="download/syllabus/bcomsyllabus.php"  title="Drop down menu 3">BCOM</a></li>
-											
-<li><a href="download/syllabus/bedsyllabus.php" title="Drop down menu 4">BED</a></li>
-
-<li><a href="download/syllabus/ptcsyllabus.php" title="Drop down menu 4">PTC</a></li>
+<li><a href="download/syllabus/bcasyllabus.php" title="Dr">BCA</a></li>							
+<li><a href="download/syllabus/bbasyllabus.php"  title="Drop down menu 2">BBA</a></li>					
+<li><a href="download/syllabus/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+<li><a href="download/syllabus/mba.php" title="Drop down menu 3">MBA</a></li>
+<li><a href="download/syllabus/mba.php" title="Drop down menu 3">MCA</a></li>
 											
 </ul>
 									
@@ -187,11 +181,9 @@
 											
 <li><a href="download/assignment/bbaassignment.php" title="Dr">BBA</a></li>
 											
-<li><a href="download/assignment/bcomassignment.php" title="Dr">BCOM</a></li>
-												
-<li><a href="download/assignment/bedassignment.php" title="Dr">BED</a></li>
-	
-<li><a href="download/assignment/ptcaassignment.php" title="Dr">PTC</a></li>
+<li><a href="download/assignment/bsc.php" title="Drop down menu 3">B.Sc</a></li>
+<li><a href="download/assignment/mba.php" title="Drop down menu 3">MBA</a></li>
+<li><a href="download/assignment/mba.php" title="Drop down menu 3">MCA</a></li>
 										
 </ul>
 									
